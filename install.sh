@@ -34,5 +34,8 @@ git clone https://github.com/Yggdroot/indentLine.git /root/.vim/bundle/indentLin
 ### Install NERDTree from https://github.com/scrooloose/nerdtree
 ### Description: A file system explorer for the Vim editor.
 git clone https://github.com/scrooloose/nerdtree.git /root/.vim/bundle/nerdtree
-### Install Lightline.vim  from
+### Install Lightline.vim  from https://github.com/itchyny/lightline.vim.git
 git clone https://github.com/itchyny/lightline.vim.git /root/.vim/bundle/lightline
+### Install vim-airline from https://github.com/vim-airline/vim-airline
+git clone https://github.com/vim-airline/vim-airline /root/.vim/bundle/vim-airline
+

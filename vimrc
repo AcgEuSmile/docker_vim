@@ -122,5 +122,12 @@ let g:NERDTreeWinPos = "right"
 " Set this if statusline is blank
 set laststatus=2
 
+""" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
 " Using Pathogen to control plugin
 execute pathogen#infect()
