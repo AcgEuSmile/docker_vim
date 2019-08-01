@@ -1,6 +1,6 @@
 # Docker vim & plugins environment
 
-## Get images
+## 1.Get images
 ### Get image from docker hub
 ```
 docker pull acgeusmile/vim_env_ubuntu
@@ -10,27 +10,17 @@ docker pull acgeusmile/vim_env_ubuntu
 docker build --rm -t acgeusmile/vim_env_ubuntu .
 ```
 
-## Run container and link local data to docker
-### Method 1 | Run vim directorily
-If using ubuntu docker path
-```bash
-docker run -it -P --name vim -v D:\Code:/root/ketercy acgeusmile/vim_env_ubuntu /usr/bin/vim
-```
-If using ubuntu docker path
-```bash
-docker run -it -P --name vim -v /home/ketercy:/root/ketercy acgeusmile/vim_env_ubuntu /usr/bin/vim
-```
-### Method 2 | Let container always open
-### alwakys open docker container
+## 2.Run container and link local data to docker
+### Run the vim container into terminal mode
 If using windows docker path
 ```bash
-docker run -d -P --name vim -v D:\Code:/root/ketercy acgeusmile/vim_env_ubuntu tail -f /dev/null
+docker run -it -P --name vim -v D:\Code:/root/ketercy acgeusmile/vim_env_ubuntu bash
 ```
 If using ubuntu docker path
 ```bash
-docker run -d -P --name vim -v /home/ketercy:/root/ketercy acgeusmile/vim_env_ubuntu tail -f /dev/null
+docker run -it -P --name vim -v /home/ketercy:/root/ketercy acgeusmile/vim_env_ubuntu bash
 ```
-## Run in vim environment
+## Restart the vim container if the status of the vim container is exited
 ```bash
-docker exec -it vim bash
+docker container start -ai vim
 ```
