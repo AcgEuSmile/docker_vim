@@ -1,5 +1,10 @@
 # Docker vim & plugins environment
 
+## Quick using
+```
+docker pull acgeusmile/vim_env_ubuntu
+```
+
 ## Build vim environment
 ```bash
 docker build --rm -t chu/vim_env .
