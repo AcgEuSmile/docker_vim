@@ -1,11 +1,11 @@
 # Docker vim & plugins environment
 
-## Quick using
+## Get images
+### Get image from docker hub
 ```
 docker pull acgeusmile/vim_env_ubuntu
 ```
-
-## Build vim environment
+### Build image by yourself
 ```bash
 docker build --rm -t chu/vim_env .
 ```
