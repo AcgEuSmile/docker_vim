@@ -1,11 +1,10 @@
 echo "-->to be install components..."
 # Install vim
-## Troubleshooting for add-apt-repository: command not found
+## Declare the packge need in build stage
+buildDeps="software-properties-common git curl"
 apt-get update
-apt-get install software-properties-common -y
-# install git
-apt-get install git -y
-apt-get install curl -y
+## Install the package need in build stage
+apt-get install -y ${buildDeps}
 add-apt-repository ppa:jonathonf/vim
 apt-get update
 apt-get install vim -y
@@ -39,3 +38,5 @@ git clone https://github.com/itchyny/lightline.vim.git /root/.vim/bundle/lightli
 ### Install vim-airline from https://github.com/vim-airline/vim-airline
 git clone https://github.com/vim-airline/vim-airline /root/.vim/bundle/vim-airline
 
+## Clear buildDeps
+apt-get purge -y --auto-remove ${buildDeps}
