@@ -16,7 +16,7 @@ cd /tmp/vim
 make install
 
 # install pip
-apk add python3-pip -y
+apk add python3-pip 
 # Install plugin
 ## Install Pathogen from https://github.com/tpope/vim-pathogen (Plugin controller)
 if [ ! -d  "/root/.vim" ]; then
@@ -28,8 +28,8 @@ git clone git://github.com/jiangmiao/auto-pairs.git /root/.vim/bundle/auto-pairs
 ### Install coc.nvim
 #### Install latest stable nodejs
 #curl -sL install-node.now.sh/lts | bash
-apk add nodejs -y
-apk add npm -y
+apk add nodejs 
+apk add npm 
 #### coc.nvim
 git clone git://github.com/neoclide/coc.nvim.git --branch release /root/.vim/bundle/coc.nvim
 #### Install Python Snippet 
