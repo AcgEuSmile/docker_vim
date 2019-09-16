@@ -1,10 +1,12 @@
 echo "-->to be install components..."
 # Install vim
 ## Declare the packge need in build stage
-buildDeps="git curl build-base ctags git libx11-dev libxpm-dev libxt-dev make ncurses-dev python python-dev"
+buildDeps="git curl build-base ctags libx11-dev libxpm-dev libxt-dev make ncurses-dev"
+langDeps="python python-dev"
 apk update
 ## Install the package need in build stage
 apk add ${buildDeps}
+apk add ${langDeps}
 apk update
 ## Install vim main program
 cd /tmp
@@ -44,4 +46,4 @@ git clone https://github.com/itchyny/lightline.vim.git /root/.vim/bundle/lightli
 git clone https://github.com/vim-airline/vim-airline /root/.vim/bundle/vim-airline
 
 ## Clear buildDeps
-apt-get purge -y --auto-remove ${buildDeps}
+apk del --purge ${buildDeps}
