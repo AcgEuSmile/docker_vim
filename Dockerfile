@@ -1,4 +1,4 @@
-FROM docker.io/ubuntu:latest
+FROM docker.io/alpine:latest
 
 ADD ./install.sh /usr/local
 ADD ./vimrc /root/.vimrc

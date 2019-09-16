@@ -1,15 +1,20 @@
 echo "-->to be install components..."
 # Install vim
 ## Declare the packge need in build stage
-buildDeps="software-properties-common git curl"
-apt-get update
+buildDeps="git curl build-base ctags git libx11-dev libxpm-dev libxt-dev make ncurses-dev python python-dev"
+apk update
 ## Install the package need in build stage
-apt-get install -y ${buildDeps}
-add-apt-repository ppa:jonathonf/vim
-apt-get update
-apt-get install vim -y
+apk add ${buildDeps}
+apk update
+## Install vim main program
+cd /tmp
+git clone https://github.com/vim/vim 
+cd /tmp/vim
+./configure
+make install
+
 # install pip
-apt-get install python3-pip -y
+apk add python3-pip -y
 # Install plugin
 ## Install Pathogen from https://github.com/tpope/vim-pathogen (Plugin controller)
 if [ ! -d  "/root/.vim" ]; then
@@ -21,8 +26,8 @@ git clone git://github.com/jiangmiao/auto-pairs.git /root/.vim/bundle/auto-pairs
 ### Install coc.nvim
 #### Install latest stable nodejs
 #curl -sL install-node.now.sh/lts | bash
-apt-get install nodejs -y
-apt-get install npm -y
+apk add nodejs -y
+apk add npm -y
 #### coc.nvim
 git clone git://github.com/neoclide/coc.nvim.git --branch release /root/.vim/bundle/coc.nvim
 #### Install Python Snippet 
