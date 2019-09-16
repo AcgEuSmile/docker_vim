@@ -2,7 +2,7 @@ echo "-->to be install components..."
 # Install vim
 ## Declare the packge need in build stage
 buildDeps="git curl build-base ctags libx11-dev libxpm-dev libxt-dev make ncurses-dev"
-langDeps="python python-dev"
+langDeps="python python-dev nodejs npm"
 apk update
 ## Install the package need in build stage
 apk add ${buildDeps}
@@ -28,8 +28,8 @@ git clone git://github.com/jiangmiao/auto-pairs.git /root/.vim/bundle/auto-pairs
 ### Install coc.nvim
 #### Install latest stable nodejs
 #curl -sL install-node.now.sh/lts | bash
-apk add nodejs 
-apk add npm 
+#apk add nodejs 
+#apk add npm 
 #### coc.nvim
 git clone git://github.com/neoclide/coc.nvim.git --branch release /root/.vim/bundle/coc.nvim
 #### Install Python Snippet 
